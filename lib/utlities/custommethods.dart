@@ -6,12 +6,12 @@ bool isEmailValid(String email) {
 }
 
 //void showmessageToast(
-  //  {required String message, required Color backgroundcolor}) {
- // Fluttertoast.showToast(
-   //   msg: message,
-     // backgroundColor: backgroundcolor,
-      //textColor: Colors.white,
-     // fontSize: 16.0);
+//  {required String message, required Color backgroundcolor}) {
+// Fluttertoast.showToast(
+//   msg: message,
+// backgroundColor: backgroundcolor,
+//textColor: Colors.white,
+// fontSize: 16.0);
 //}
 
 AppBar detailspageappbar(
@@ -39,5 +39,32 @@ AppBar detailspageappbar(
         ),
       )
     ],
+  );
+}
+
+Future<bool?> showExitConfirmationDialog(
+    {required BuildContext context}) async {
+  return showDialog<bool>(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        content: const Text('Are You Want to exit?'),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('Yes'),
+            onPressed: () {
+              Navigator.of(context).pop(true); // تأكيد الخروج
+            },
+          ),
+          TextButton(
+            child: const Text('No'),
+            onPressed: () {
+              Navigator.of(context).pop(false); // إلغاء الخروج
+            },
+          ),
+        ],
+      );
+    },
   );
 }

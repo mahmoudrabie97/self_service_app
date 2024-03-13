@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:self_service_app/pages/home/home_page.dart';
 import 'package:self_service_app/pages/login/login_page.dart';
 import 'package:self_service_app/pages/onboarding_page/onboarding_page.dart';
+import 'package:self_service_app/root_bottom_nav.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: RootBottmNav(),
     );
   }
 }
