@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 
 
-class CheckBoxOnBoarding extends StatelessWidget {
-  const CheckBoxOnBoarding({super.key});
+class CheckBox extends StatelessWidget {
+  const CheckBox({super.key});
 
   @override
   Widget build(BuildContext context) {

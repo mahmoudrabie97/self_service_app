@@ -19,7 +19,7 @@ class CustomOnBoardingBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Image.asset(AssetsData.onBoarding),
+          Image.asset(AssetsData.logo),
           const Text(
             'مجموعة المهندس القابضة ',
             style: AppStyles.style18,
@@ -44,11 +44,11 @@ class CustomOnBoardingBody extends StatelessWidget {
           ),
           const Row(
             children: [
-              CheckBoxOnBoarding(),
+              CheckBox(),
               Text(
                 'Remember me',
                 style: AppStyles.style15,
-              )
+              ),
             ],
           ),
           const SizedBox(
