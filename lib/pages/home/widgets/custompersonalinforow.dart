@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomPersonalInformationRow extends StatelessWidget {
-  const CustomPersonalInformationRow({
+class CustomHomeApbar extends StatelessWidget {
+  const CustomHomeApbar({
     super.key,
   });
 

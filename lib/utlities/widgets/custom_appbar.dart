@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:self_service_app/utlities/app_styles.dart';
 
 import '../appcolors.dart';
 
@@ -29,6 +30,7 @@ class CustomAppbarMain extends StatelessWidget {
           ),
           Text(
             text,
+            style: AppStyles.style24,
           ),
         ],
       ),
