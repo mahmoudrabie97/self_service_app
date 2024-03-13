@@ -14,7 +14,7 @@ class HomePageBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          const CustomPersonalInformationRow(),
+          const CustomHomeApbar(),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 20, left: 0, right: 0),
