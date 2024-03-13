@@ -43,7 +43,7 @@ dependencies:
   google_fonts:
   lottie:
   animated_text_kit:
-
+  flutter_advanced_calendar:
 dev_dependencies:
   flutter_test:
     sdk: flutter
