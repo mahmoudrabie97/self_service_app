@@ -8,6 +8,7 @@ class OnBoardingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.black,
+
       body: CustomOnBoardingBody(),
     );
   }
