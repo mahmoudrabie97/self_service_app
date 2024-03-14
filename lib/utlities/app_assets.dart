@@ -1,5 +1,6 @@
-class AssetsData{
-  static const logo = 'assets/logo.png';
+class AssetsData {
+  static const logo = 'assets/images/logo.png';
+  static const profile = 'assets/images/profile.png';
   // static const onBoarding = 'assets/onboarding.png';
   // static const signUp = 'assets/images/signUp.png';
   // static const dollar = 'assets/images/dollar 2.png';
@@ -28,5 +29,4 @@ class AssetsData{
   // static const visa = 'assets/images/visa.png';
   // static const payPal = 'assets/images/paypal.png';
   // static const apple = 'assets/images/apple-logo (1) 1.png';
-
 }

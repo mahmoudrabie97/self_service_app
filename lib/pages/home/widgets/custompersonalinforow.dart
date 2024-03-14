@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:self_service_app/utlities/app_assets.dart';
 
 class CustomHomeApbar extends StatelessWidget {
   const CustomHomeApbar({
@@ -13,19 +14,25 @@ class CustomHomeApbar extends StatelessWidget {
             color: Colors.white,
             onPressed: () {},
             icon: const Icon(Icons.arrow_back_ios)),
-        const Row(
+        Row(
           children: [
-            CircleAvatar(),
-            SizedBox(
+            CircleAvatar(
+              child: Image.asset(AssetsData.profile),
+            ),
+            const SizedBox(
               width: 10,
             ),
-            Column(
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Mohammmed Ahmed',
                   style: TextStyle(color: Colors.white),
                 ),
-                Text('Accountant', style: TextStyle(color: Colors.white)),
+                Text('Accountant',
+                    style: TextStyle(
+                      color: Colors.grey,
+                    )),
               ],
             ),
           ],
