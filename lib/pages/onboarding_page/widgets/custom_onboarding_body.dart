@@ -19,7 +19,7 @@ class CustomOnBoardingBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Image.asset(AppAssets.logo),
+          Image.asset(AssetsData.logo),
           const Text(
             'مجموعة المهندس القابضة ',
             style: AppStyles.style18,

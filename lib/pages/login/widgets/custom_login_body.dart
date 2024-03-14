@@ -13,11 +13,8 @@ class CustomLogInBody extends StatelessWidget {
       padding: const EdgeInsets.only(top: 28.0),
       child: SingleChildScrollView(
         child: Column(
-
-
           children: [
-
-            Image.asset(AppAssets.logo),
+            Image.asset(AssetsData.logo),
             const Text(
               'مجموعة المهندس القابضة ',
               style: AppStyles.style18,
@@ -26,13 +23,13 @@ class CustomLogInBody extends StatelessWidget {
               'Engineer Holding Group',
               style: AppStyles.style18,
             ),
-             const SizedBox(height: 10,),
-             const CustomLoginMainContainer(),
+            const SizedBox(
+              height: 10,
+            ),
+            const CustomLoginMainContainer(),
           ],
         ),
       ),
     );
   }
 }
-
-
