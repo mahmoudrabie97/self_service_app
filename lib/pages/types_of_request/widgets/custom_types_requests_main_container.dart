@@ -30,28 +30,28 @@ class CustomTypesRequestMainContainer extends StatelessWidget {
         child: Column(
           children: [
             CustomIetmContainer(
-              image: AssetsData.requests,
+              icon: Icons.watch_later_rounded,
               text: 'Time off requests',
             ),
             SizedBox(
               height: 17,
             ),
             CustomIetmContainer(
-              image: AssetsData.expenses,
+              icon: Icons.home_repair_service_outlined,
               text: 'My Expenses',
             ),
             SizedBox(
               height: 17,
             ),
             CustomIetmContainer(
-              image: AssetsData.settings,
+              icon: Icons.settings,
               text: 'Maintenance request',
             ),
             SizedBox(
               height: 17,
             ),
             CustomIetmContainer(
-              image: AssetsData.time,
+              icon: Icons.email,
               text: 'Letter Requests',
             ),
           ],

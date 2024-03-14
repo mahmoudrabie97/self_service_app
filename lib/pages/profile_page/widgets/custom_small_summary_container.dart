@@ -16,27 +16,45 @@ class CustomSmallSummaryContaner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 80,
+      width: 70,
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(12)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Column(
-            children: <Widget>[
-              Row(
-                children: [
-                  Icon(icon, size: 40, color: Colors.brown),
-                  Text(number, style: TextStyle(fontWeight: FontWeight.bold)),
-                ],
-              ),
-              CustomText(
-                text: title,
-                color: Colors.brown,
-                fontSize: 12,
-              ),
-            ],
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(top: 9),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Container(
+                        height: 30,
+                        decoration: BoxDecoration(
+                            color: Colors.brown,
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Icon(icon, color: Colors.white)),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(number,
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
+                  ],
+                ),
+                SizedBox(height: 5),
+                Expanded(
+                  child: CustomText(
+                    text: title,
+                    color: Colors.brown,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
