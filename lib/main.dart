@@ -25,7 +25,9 @@ class MyApp extends StatelessWidget {
             //backgroundColor: AppColor.primary,
             ),
       ),
+
       home:  RootBottmNav(),
+
     );
   }
 }

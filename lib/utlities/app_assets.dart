@@ -1,9 +1,8 @@
-class AppAssets{
-  static const logo = 'assets/logo.png';
-  static const time = 'assets/time.png';
-  static const expenses = 'assets/expenses.png';
-  static const requests = 'assets/requests.png';
-  static const settings = 'assets/settings.png';
+
+class AssetsData {
+  static const logo = 'assets/images/logo.png';
+  static const profile = 'assets/images/profile.png';
+
   // static const onBoarding = 'assets/onboarding.png';
   // static const signUp = 'assets/images/signUp.png';
   // static const dollar = 'assets/images/dollar 2.png';
@@ -32,5 +31,4 @@ class AppAssets{
   // static const visa = 'assets/images/visa.png';
   // static const payPal = 'assets/images/paypal.png';
   // static const apple = 'assets/images/apple-logo (1) 1.png';
-
 }

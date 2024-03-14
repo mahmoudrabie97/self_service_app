@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:self_service_app/pages/profile_page/widgets/profile_body.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -6,9 +7,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Profile Page'),
-      ),
+      body: ProfileBody(),
     );
   }
 }
