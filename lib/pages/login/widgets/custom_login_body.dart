@@ -17,7 +17,7 @@ class CustomLogInBody extends StatelessWidget {
 
           children: [
 
-            Image.asset(AssetsData.logo),
+            Image.asset(AppAssets.logo),
             const Text(
               'مجموعة المهندس القابضة ',
               style: AppStyles.style18,

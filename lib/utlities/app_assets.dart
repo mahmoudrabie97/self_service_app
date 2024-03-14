@@ -1,5 +1,9 @@
-class AssetsData{
+class AppAssets{
   static const logo = 'assets/logo.png';
+  static const time = 'assets/time.png';
+  static const expenses = 'assets/expenses.png';
+  static const requests = 'assets/requests.png';
+  static const settings = 'assets/settings.png';
   // static const onBoarding = 'assets/onboarding.png';
   // static const signUp = 'assets/images/signUp.png';
   // static const dollar = 'assets/images/dollar 2.png';

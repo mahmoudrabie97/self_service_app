@@ -22,4 +22,9 @@ class AppStyles {
     color: Color(0xffFFFFFF),
     fontWeight: FontWeight.w500,
   );
+  static const style17 = TextStyle(
+    fontSize: 17,
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
+  );
 }
