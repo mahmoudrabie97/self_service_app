@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:self_service_app/root_bottom_nav.dart';
 import 'package:self_service_app/utlities/app_styles.dart';
+import 'package:self_service_app/utlities/extentionhelper.dart';
 
 import '../../../utlities/custommethods.dart';
 import '../../../utlities/widgets/custombutton.dart';
@@ -22,14 +24,20 @@ class CustomLoginMainContainer extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 80.0,right: 12,left: 12,),
+        padding: const EdgeInsets.only(
+          top: 80.0,
+          right: 12,
+          left: 12,
+        ),
         child: Column(
           children: [
             const Text(
               'Welcome Back ',
               style: AppStyles.style32,
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             CustomTextFormField(
               hintText: 'Email',
               hinnntcolr: Colors.grey,
@@ -43,7 +51,9 @@ class CustomLoginMainContainer extends StatelessWidget {
                 return null;
               },
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             CustomTextFormField(
               hintText: 'Password',
               hinnntcolr: Colors.grey,
@@ -62,7 +72,9 @@ class CustomLoginMainContainer extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: CustomButton(
                 buttonText: 'Login',
-                onPressed: () {},
+                onPressed: () {
+                  context.push(RootBottmNav());
+                },
                 buttonColor: Colors.brown,
                 borderRadius: (10),
               ),
