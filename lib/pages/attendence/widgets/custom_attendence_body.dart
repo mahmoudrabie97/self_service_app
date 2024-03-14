@@ -11,7 +11,7 @@ class CustomAttendenceBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return  ListView(
       children: [
         CustomAppbarMain(text: 'Records', icon: Icons.arrow_back_ios,),
         CustomAttendenceMainContainer(),

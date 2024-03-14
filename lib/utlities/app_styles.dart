@@ -27,4 +27,5 @@ class AppStyles {
     color: Colors.black,
     fontWeight: FontWeight.w500,
   );
+
 }

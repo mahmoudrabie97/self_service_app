@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:self_service_app/pages/request_page/widgets/custom_requests_body.dart';
 
 class RequestPage extends StatelessWidget {
   const RequestPage({super.key});
@@ -6,9 +7,7 @@ class RequestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Request Page'),
-      ),
+      body: CustomRequestsBody(),
     );
   }
 }
