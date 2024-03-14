@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:self_service_app/pages/attendace_page/attendace_page.dart';
+
+import 'package:self_service_app/pages/attendence/attendence_page.dart';
 import 'package:self_service_app/pages/home/home_page.dart';
 import 'package:self_service_app/pages/profile_page/profile_page.dart';
 import 'package:self_service_app/pages/request_page/request_page.dart';
@@ -17,7 +18,7 @@ class _RootBottmNavState extends State<RootBottmNav> {
   int currentindex = 0;
   final List<Widget> pages = <Widget>[
     const HomePage(),
-    const AttendancePage(),
+    const AttendencePage(),
     const RequestPage(),
     const ProfilePage(),
   ];
