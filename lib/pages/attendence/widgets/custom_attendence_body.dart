@@ -7,13 +7,14 @@ import 'custom_attendence_main_container.dart';
 
 
 class CustomAttendenceBody extends StatelessWidget {
-  const CustomAttendenceBody({Key? key}) : super(key: key);
+  const CustomAttendenceBody({super.key});
 
   @override
+
   Widget build(BuildContext context) {
     return  ListView(
       children: [
-        CustomAppbarMain(text: 'Records', icon: Icons.arrow_back_ios,),
+        const CustomAppbarMain(text: 'Records', icon: Icons.arrow_back_ios,),
         CustomAttendenceMainContainer(),
 
       ],
