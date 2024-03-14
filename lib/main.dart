@@ -3,6 +3,7 @@ import 'package:self_service_app/pages/attendence/attendence_page.dart';
 import 'package:self_service_app/pages/home/home_page.dart';
 import 'package:self_service_app/pages/login/login_page.dart';
 import 'package:self_service_app/pages/onboarding_page/onboarding_page.dart';
+import 'package:self_service_app/pages/types_of_request/types_of_requests_page.dart';
 import 'package:self_service_app/root_bottom_nav.dart';
 
 void main() {
@@ -24,7 +25,9 @@ class MyApp extends StatelessWidget {
             //backgroundColor: AppColor.primary,
             ),
       ),
-      home: RootBottmNav(),
+
+      home:  RootBottmNav(),
+
     );
   }
 }

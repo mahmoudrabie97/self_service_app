@@ -1,6 +1,8 @@
+
 class AssetsData {
   static const logo = 'assets/images/logo.png';
   static const profile = 'assets/images/profile.png';
+
   // static const onBoarding = 'assets/onboarding.png';
   // static const signUp = 'assets/images/signUp.png';
   // static const dollar = 'assets/images/dollar 2.png';
