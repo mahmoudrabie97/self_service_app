@@ -13,8 +13,8 @@ class OnBoaedingBody extends StatefulWidget {
 class _OnBoaedingBodyState extends State<OnBoaedingBody> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
-      context.push(OnBoardingPage());
+    Future.delayed(const Duration(seconds: 3), () {
+      context.push(const OnBoardingPage());
     });
     super.initState();
   }
