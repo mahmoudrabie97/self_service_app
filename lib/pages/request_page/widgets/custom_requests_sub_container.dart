@@ -11,9 +11,9 @@ class CustomRequestsSubContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 30.0, right: 15, left: 15),
+      padding: const EdgeInsets.only(top: 20.0, right: 15, left: 15),
       child: Container(
-        height: MediaQuery.sizeOf(context).height * .4,
+        height: MediaQuery.sizeOf(context).height * .35,
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: const LinearGradient(

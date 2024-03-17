@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'custom_ietm_row_container.dart';
-import 'custom_requests_main_container.dart';
+import 'custom_drop_down_button.dart';
+
 
 
 
@@ -11,21 +11,20 @@ class CustomRequestsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(left: 40.0,top: 10),
+    return  Padding(
+      padding: const EdgeInsets.only(left: 60.0,top: 10,right: 60.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomIetmRowContainer(
-            text: 'Status',
-          ),
-          CustomIetmRowContainer(
-            text: 'Type',
-          ),
-          CustomIetmRowContainer(
-            text: 'Sort',
-          ),
+          CustomDropDownButton(dropDownValue: 'Status',),
+          CustomDropDownButton(dropDownValue: 'Type',),
+          CustomDropDownButton(dropDownValue: 'Sort',),
         ],
       ),
     );
   }
 }
+
+
+
+
