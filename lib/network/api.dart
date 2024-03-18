@@ -1,8 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
 
 class CallApi {
   static String msg = '';
@@ -16,8 +16,10 @@ class CallApi {
     try {
       msg = '';
       var fullUrl = baseUrl + apiUrl;
+      var jsonData = jsonEncode(data);
 
-      return await http.post(Uri.parse(fullUrl), body: data, headers: headers);
+      return await http.post(Uri.parse(fullUrl),
+          body: jsonData, headers: headers);
     } on IOException catch (e) {
       debugPrint('Socket Error: $e');
       msg = 'Socket Error: $e';

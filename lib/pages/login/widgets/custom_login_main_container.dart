@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:self_service_app/cubit/authcubit/authcubit.dart';
 import 'package:self_service_app/root_bottom_nav.dart';
 import 'package:self_service_app/utlities/app_styles.dart';
 import 'package:self_service_app/utlities/extentionhelper.dart';
@@ -9,7 +10,11 @@ import '../../../utlities/widgets/customtextformfield.dart';
 import 'custom_login_row.dart';
 
 class CustomLoginMainContainer extends StatelessWidget {
-  const CustomLoginMainContainer({super.key});
+  CustomLoginMainContainer({super.key, required this.db});
+  final formkey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final String db;
 
   @override
   Widget build(BuildContext context) {
@@ -29,57 +34,66 @@ class CustomLoginMainContainer extends StatelessWidget {
           right: 12,
           left: 12,
         ),
-        child: Column(
-          children: [
-            const Text(
-              'Welcome Back ',
-              style: AppStyles.style32,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            CustomTextFormField(
-              hintText: 'Email',
-              hinnntcolr: Colors.grey,
-              keyboardType: TextInputType.text,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'please enter your email';
-                } else if (!isEmailValid(value)) {
-                  return 'Invalid email format';
-                }
-                return null;
-              },
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            CustomTextFormField(
-              hintText: 'Password',
-              hinnntcolr: Colors.grey,
-              keyboardType: TextInputType.text,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'please enter your email';
-                } else if (!isEmailValid(value)) {
-                  return 'Invalid email format';
-                }
-                return null;
-              },
-            ),
-            const CustomLoginRow(),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: CustomButton(
-                buttonText: 'Login',
-                onPressed: () {
-                  context.push(RootBottmNav());
-                },
-                buttonColor: Colors.brown,
-                borderRadius: (10),
+        child: Form(
+          key: formkey,
+          child: Column(
+            children: [
+              const Text(
+                'Welcome Back ',
+                style: AppStyles.style32,
               ),
-            )
-          ],
+              const SizedBox(
+                height: 30,
+              ),
+              CustomTextFormField(
+                hintText: 'Email',
+                hinnntcolr: Colors.grey,
+                keyboardType: TextInputType.text,
+                controller: _emailController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'please enter your email';
+                  } // else if (!isEmailValid(value)) {
+                  // return 'Invalid email format';
+                  // }
+                  return null;
+                },
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomTextFormField(
+                controller: _passwordController,
+                hintText: 'Password',
+                hinnntcolr: Colors.grey,
+                keyboardType: TextInputType.text,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'please enter your email';
+                  }
+                  return null;
+                },
+              ),
+              const CustomLoginRow(),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: CustomButton(
+                  buttonText: 'Login',
+                  onPressed: () {
+                    if (formkey.currentState!.validate()) {
+                      AuthCubit.get(context).loginUser(
+                          email: _emailController.text,
+                          password: _passwordController.text,
+                          db: db,
+                          context: context);
+                    }
+                  },
+                  buttonColor: Colors.brown,
+                  borderRadius: (10),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

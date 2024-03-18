@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:self_service_app/cubit/authcubit/authcubit.dart';
 
 import 'package:self_service_app/pages/attendence/attendence_page.dart';
 import 'package:self_service_app/pages/home/home_page.dart';
@@ -17,16 +19,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        // canvasColor: AppColor.primary,
-        scaffoldBackgroundColor: Colors.brown,
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-            //backgroundColor: AppColor.primary,
-            ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (BuildContext context) => AuthCubit()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          // canvasColor: AppColor.primary,
+          scaffoldBackgroundColor: Colors.brown,
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+              //backgroundColor: AppColor.primary,
+              ),
+        ),
+        home: OnBoardingOne(),
       ),
-      home: OnBoardingOne(),
     );
   }
 }
