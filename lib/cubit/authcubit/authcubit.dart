@@ -7,7 +7,9 @@ import 'package:self_service_app/models/user_model.dart';
 import 'package:self_service_app/network/api.dart';
 import 'package:self_service_app/network/endpoints.dart';
 import 'package:self_service_app/root_bottom_nav.dart';
+import 'package:self_service_app/utlities/constants.dart';
 import 'package:self_service_app/utlities/extentionhelper.dart';
+import 'package:self_service_app/utlities/widgets/showdialog.dart';
 
 class AuthCubit extends Cubit<AuthStates> {
   AuthCubit() : super(AuthInitialState());
@@ -65,34 +67,34 @@ class AuthCubit extends Cubit<AuthStates> {
     ).then((value) async {
       if (value!.statusCode == 200) {
         final responseBody = json.decode(value.body);
-        context.push(RootBottmNav());
 
-        userModel = UserModel.fromJson(responseBody);
-        print(userModel!.jsonrpc);
+        print(responseBody);
+        if (responseBody.containsKey('error')) {
+          String errormessage = responseBody['error']['data']['message'];
+          ShowMyDialog.widgetshowMsg(context, Text(errormessage));
+          emit(LoginErrorState());
+        } else {
+          final sessionId = value.headers['set-cookie'];
+          if (sessionId != null) {
+            final sessionIdValue =
+                RegExp(r'session_id=([^;]+)').firstMatch(sessionId)?.group(1);
+            if (sessionIdValue != null) {
+              AppConstant.settion_Id = sessionIdValue;
 
-        //AppConstant.token = userModel!.accessToken;
-        //  await CashDate.setDate(key: 'token', value: userModel?.accessToken);
-        // AppConstant.tokensharedpref = CashDate.getData(key: 'token');
+              print('Setion Id ${AppConstant.settion_Id}');
+
+              context.push(const RootBottmNav());
+              emit(LoginSucsessState());
+            }
+          }
+        }
+
+        ;
 
         emit(LoginSucsessState());
-      } else if (value.statusCode == 400) {
-        final responseBody = json.decode(value.body);
-        debugPrint(responseBody['error_description']);
-        // ShowMyDialog.showMsg(context, responseBody['error_description']);
-
-        print(value.body);
-
-        emit(LoginErrorEmailorpasswordState());
-      } else if (value.statusCode == 500) {
-        // ShowMyDialog.showMsg(context, 'internal server error,');
-        emit(LoginServerErrorState());
-      } else {
-        // ShowMyDialog.showMsg(context, 'unknown error,');
-        emit(LoginErrorState());
       }
     }).catchError((error) {
       debugPrint('An error occurred: $error');
-      // ShowMyDialog.showMsg(context, 'An error occurred: $error');
       emit(LoginErrorState());
     });
   }

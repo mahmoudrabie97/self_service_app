@@ -13,36 +13,36 @@ class CustomLogInBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthStates>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
-      builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.only(top: 28.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Image.asset(AssetsData.logo),
-                const Text(
-                  'مجموعة المهندس القابضة ',
-                  style: AppStyles.style18,
-                ),
-                const Text(
-                  'Engineer Holding Group',
-                  style: AppStyles.style18,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                CustomLoginMainContainer(
-                  db: db,
-                ),
-              ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 28.0),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(AssetsData.logo),
+            const Text(
+              'مجموعة المهندس القابضة ',
+              style: AppStyles.style18,
             ),
-          ),
-        );
-      },
+            const Text(
+              'Engineer Holding Group',
+              style: AppStyles.style18,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            BlocConsumer<AuthCubit, AuthStates>(
+              listener: (context, state) {
+                // TODO: implement listener
+              },
+              builder: (context, state) {
+                return CustomLoginMainContainer(
+                  db: db,
+                );
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -8,9 +8,21 @@ import 'package:self_service_app/utlities/widgets/customtext.dart';
 import '../../../utlities/widgets/customtextformfield.dart';
 import 'check_box_onboarding_row.dart';
 
-class CustomOnBoardingBody extends StatelessWidget {
-  CustomOnBoardingBody({super.key});
+class CustomOnBoardingBody extends StatefulWidget {
+  const CustomOnBoardingBody({super.key});
+
+  @override
+  State<CustomOnBoardingBody> createState() => _CustomOnBoardingBodyState();
+}
+
+class _CustomOnBoardingBodyState extends State<CustomOnBoardingBody> {
   final TextEditingController _serverController = TextEditingController();
+  @override
+  void initState() {
+    _serverController.text = 'http://hr_app.erpmakeen.com:8079';
+    super.initState();
+  }
+
   final formkey = GlobalKey<FormState>();
 
   @override

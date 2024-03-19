@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:self_service_app/cubit/authcubit/authcubit.dart';
+import 'package:self_service_app/cubit/authcubit/authstates.dart';
 import 'package:self_service_app/root_bottom_nav.dart';
 import 'package:self_service_app/utlities/app_styles.dart';
 import 'package:self_service_app/utlities/extentionhelper.dart';
@@ -75,23 +76,31 @@ class CustomLoginMainContainer extends StatelessWidget {
                 },
               ),
               const CustomLoginRow(),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: CustomButton(
-                  buttonText: 'Login',
-                  onPressed: () {
-                    if (formkey.currentState!.validate()) {
-                      AuthCubit.get(context).loginUser(
-                          email: _emailController.text,
-                          password: _passwordController.text,
-                          db: db,
-                          context: context);
-                    }
-                  },
-                  buttonColor: Colors.brown,
-                  borderRadius: (10),
-                ),
-              )
+              AuthCubit.get(context).state is LoginLoadingState
+                  ? const SizedBox(
+                      height: 30,
+                      width: 30,
+                      child: CircularProgressIndicator(
+                        color: Colors.brown,
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: CustomButton(
+                        buttonText: 'Login',
+                        onPressed: () {
+                          if (formkey.currentState!.validate()) {
+                            AuthCubit.get(context).loginUser(
+                                email: _emailController.text,
+                                password: _passwordController.text,
+                                db: db,
+                                context: context);
+                          }
+                        },
+                        buttonColor: Colors.brown,
+                        borderRadius: (10),
+                      ),
+                    )
             ],
           ),
         ),

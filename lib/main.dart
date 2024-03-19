@@ -8,8 +8,10 @@ import 'package:self_service_app/pages/login/login_page.dart';
 import 'package:self_service_app/pages/onboarding_page/onbarding_one.dart';
 import 'package:self_service_app/pages/onboarding_page/onboarding_page.dart';
 import 'package:self_service_app/pages/types_of_request/types_of_requests_page.dart';
+import 'package:self_service_app/simpleblocobserver.dart';
 
 void main() {
+  Bloc.observer = SimpleBlocObserver();
   runApp(const MyApp());
 }
 

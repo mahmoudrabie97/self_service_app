@@ -26,12 +26,13 @@ class ShowMyDialog {
       },
     );
   }
+
   static void widgetshowMsg(BuildContext context, Widget msg) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text(""),
+          title: const Text(" error"),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
