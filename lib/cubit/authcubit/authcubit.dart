@@ -11,6 +11,8 @@ import 'package:self_service_app/utlities/constants.dart';
 import 'package:self_service_app/utlities/extentionhelper.dart';
 import 'package:self_service_app/utlities/widgets/showdialog.dart';
 
+import 'authstates.dart';
+
 class AuthCubit extends Cubit<AuthStates> {
   AuthCubit() : super(AuthInitialState());
   static AuthCubit get(context) => BlocProvider.of(context);
