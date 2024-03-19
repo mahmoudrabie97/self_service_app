@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:self_service_app/cubit/authcubit/authcubit.dart';
+import 'package:self_service_app/cubit/authcubit/authstates.dart';
 
 import '../../../utlities/app_assets.dart';
 import '../../../utlities/app_styles.dart';
 import 'custom_login_main_container.dart';
 
 class CustomLogInBody extends StatelessWidget {
-  const CustomLogInBody({Key? key}) : super(key: key);
+  const CustomLogInBody({super.key, required this.db});
+  final String db;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,16 @@ class CustomLogInBody extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const CustomLoginMainContainer(),
+            BlocConsumer<AuthCubit, AuthStates>(
+              listener: (context, state) {
+                // TODO: implement listener
+              },
+              builder: (context, state) {
+                return CustomLoginMainContainer(
+                  db: db,
+                );
+              },
+            ),
           ],
         ),
       ),

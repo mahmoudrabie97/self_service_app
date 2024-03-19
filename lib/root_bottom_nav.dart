@@ -4,8 +4,10 @@ import 'package:self_service_app/pages/attendence/attendence_page.dart';
 import 'package:self_service_app/pages/home/home_page.dart';
 import 'package:self_service_app/pages/profile_page/profile_page.dart';
 import 'package:self_service_app/pages/request_page/request_page.dart';
+import 'package:self_service_app/pages/types_of_request/types_of_requests_page.dart';
 import 'package:self_service_app/utlities/appcolors.dart';
 import 'package:self_service_app/utlities/custommethods.dart';
+import 'package:self_service_app/utlities/extentionhelper.dart';
 
 class RootBottmNav extends StatefulWidget {
   const RootBottmNav({Key? key}) : super(key: key);
@@ -24,24 +26,20 @@ class _RootBottmNavState extends State<RootBottmNav> {
   ];
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        bool? shouldExit = await showExitConfirmationDialog(context: context);
-        return shouldExit ?? false;
-      },
-      child: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(
-            Icons.add,
-            size: 20,
-          ),
+    return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          context.push(TypesOfRequestsPage());
+        },
+        child: Icon(
+          Icons.add,
+          size: 20,
         ),
-        backgroundColor: Colors.grey.shade100,
-        body: pages[currentindex],
-        bottomNavigationBar: buildBottomNavBar(),
       ),
+      backgroundColor: Colors.grey.shade100,
+      body: pages[currentindex],
+      bottomNavigationBar: buildBottomNavBar(),
     );
   }
 

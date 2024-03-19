@@ -1,4 +1,3 @@
 class AppConstant {
-  static String? token = '';
-  static String? tokensharedpref;
+  static String? settion_Id = '';
 }
