@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomDropDownButton extends StatefulWidget {
-  CustomDropDownButton({Key? key, required this.dropDownValue})
-      : super(key: key);
+  CustomDropDownButton({super.key, required this.dropDownValue});
   String dropDownValue;
 
   @override
@@ -10,7 +9,9 @@ class CustomDropDownButton extends StatefulWidget {
 }
 
 class _CustomDropDownButtonState extends State<CustomDropDownButton> {
+
   @override
+
   Widget build(BuildContext context) {
     return Container(
       height: 40,
@@ -42,18 +43,18 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
             value: 'Status',
           ),
           DropdownMenuItem(
+            value: 'Type',
             child: Text('Type',
               style: TextStyle(
                 color: Colors.brown,
               ),),
-            value: 'Type',
           ),
           DropdownMenuItem(
+            value: 'Sort',
             child: Text('Sort',
               style: TextStyle(
                 color: Colors.brown,
               ),),
-            value: 'Sort',
           ),
         ],
       ),
