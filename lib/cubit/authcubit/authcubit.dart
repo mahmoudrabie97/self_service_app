@@ -75,6 +75,7 @@ class AuthCubit extends Cubit<AuthStates> {
           emit(LoginErrorState());
         } else {
           final sessionId = value.headers['set-cookie'];
+          print('princiiiii$sessionId');
           if (sessionId != null) {
             final sessionIdValue =
                 RegExp(r'session_id=([^;]+)').firstMatch(sessionId)?.group(1);

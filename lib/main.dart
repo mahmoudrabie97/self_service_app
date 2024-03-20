@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:self_service_app/cubit/authcubit/authcubit.dart';
+import 'package:self_service_app/pages/onboarding_page/onbarding_one.dart';
 import 'package:self_service_app/pages/onboarding_page/onboarding_page.dart';
 import 'package:self_service_app/pages/types_of_request/types_of_requests_page.dart';
 import 'package:self_service_app/simpleblocobserver.dart';
