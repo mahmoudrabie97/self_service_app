@@ -1,25 +1,30 @@
+import 'dart:ui';
 
+import 'package:date_picker_timeline/date_picker_widget.dart';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_calendar/flutter_advanced_calendar.dart';
+import 'package:self_service_app/pages/profile_page/widgets/customtimercontainer.dart';
+import 'package:self_service_app/utlities/app_styles.dart';
 
-import '../../../utlities/app_styles.dart';
 import '../../../utlities/custommethods.dart';
+
 import '../../../utlities/widgets/custombutton.dart';
 import '../../../utlities/widgets/customtextformfield.dart';
-import '../../login/widgets/custom_login_row.dart';
-import 'custom_field_row.dart';
 
-class CustomAttendenceMainContainer extends StatelessWidget {
-   CustomAttendenceMainContainer({super.key});
-  final _calendarControllerToday = AdvancedCalendarController.today();
-  final _calendarControllerCustom =
-  AdvancedCalendarController(DateTime(2022, 10, 23));
-  final events = <DateTime>[
-    DateTime.now(),
-    DateTime(2022, 10, 10),
-  ];
+import 'custom_field_row.dart';
+import 'custom_time_container.dart';
+
+class CustomAttendenceMainContainer extends StatefulWidget {
+  const CustomAttendenceMainContainer({super.key});
+
+  @override
+  State<CustomAttendenceMainContainer> createState() =>
+      _CustomAttendenceMainContainerState();
+}
+
+class _CustomAttendenceMainContainerState
+    extends State<CustomAttendenceMainContainer> {
+  DateTime _selectedValue = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -27,54 +32,65 @@ class CustomAttendenceMainContainer extends StatelessWidget {
       height: MediaQuery.sizeOf(context).height * .89,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: Color(0xffFBFBFB),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
           topRight: Radius.circular(40),
         ),
       ),
-      child: ListView(
-        children: [
-          AdvancedCalendar(
-            controller: _calendarControllerCustom,
-            events: events,
-            weekLineHeight: 48.0,
-            startWeekDay: 1,
-            innerDot: true,
-            keepLineSize: true,
-            calendarTextStyle: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w400,
-              height: 1.3125,
-              letterSpacing: 0,
-            ),
-          ),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 90,
+                child: DatePicker(
+                  DateTime.now(),
+                  initialSelectedDate: DateTime.now(),
+                  selectionColor: const Color(0xff705A3E),
+                  selectedTextColor: Colors.white,
+                  dayTextStyle: AppStyles.datePackerStyle,
+                  monthTextStyle: AppStyles.datePackerStyle,
+                  dateTextStyle: AppStyles.datePackerStyle,
+                  onDateChange: (date) {
+                    // New date selected
+                    setState(() {
+                      _selectedValue = date;
+                    });
+                  },
+                ),
+              ),
+              const SizedBox(height: 15,),
+             const Text('Working Hours : From 9:00 AM To 5:00 PM ',style: AppStyles.style17,),
+              const SizedBox(height: 18,),
+              const CustomTimeContainer(),
+              const SizedBox(height: 18,),
+              CustomButton(
+                buttonText: 'Time In ',
+                onPressed: () {
 
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: CustomTextFormField(
-              hintText: 'Day off',
-              hinnntcolr: Colors.grey,
-              keyboardType: TextInputType.text,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'please enter your email';
-                } else if (!isEmailValid(value)) {
-                  return 'Invalid email format';
-                }
-                return null;
-              },
-            ),
-          ),
-          const SizedBox(height: 15,),
-          const Padding(
-            padding: EdgeInsets.only(left: 12.0,right: 12),
-            child: CustomFieldColumn(),
-          ),
+                },
+                buttonColor: Color(0xff705A3E),
+                borderRadius: (10),
+              ),
+              const SizedBox(height: 15,),
+              CustomButton(
+                buttonText: 'Time Out ',
+                onPressed: () {
 
-        ],
+                },
+                buttonColor: Color(0xff705A3E),
+                borderRadius: (10),
+              ),
+            ],
+          ),
+        ),
       ),
-
     );
   }
 }
+
+
+
+

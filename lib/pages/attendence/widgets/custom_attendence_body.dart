@@ -12,12 +12,15 @@ class CustomAttendenceBody extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    return  ListView(
-      children: [
-        const CustomAppbarMain(text: 'Records', icon: Icons.arrow_back_ios,),
-        CustomAttendenceMainContainer(),
-
-      ],
+    return  const SingleChildScrollView(
+      child: Column(
+        children:
+        [
+          CustomAppbarMain(text: 'Records', icon: Icons.arrow_back_ios,),
+          CustomAttendenceMainContainer(),
+      
+        ],
+      ),
     );
   }
 }
