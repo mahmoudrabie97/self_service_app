@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:self_service_app/pages/home/widgets/custompersonalinforow.dart';
+import 'package:self_service_app/utlities/widgets/custom_personal_apbar.dart';
 import 'package:self_service_app/pages/profile_page/widgets/custom_choosing_ltwm.dart';
 import 'package:self_service_app/pages/profile_page/widgets/custom_summary_items.dart';
 import 'package:self_service_app/pages/profile_page/widgets/customtimercontainer.dart';
@@ -14,7 +14,8 @@ class ProfileBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          const CustomHomeApbar(),
+            CustomHomeApbar(title: 'Mohammmed Ahmed', subTitle: 'Accountant', icon: Icons.notifications_active,
+               ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 20, left: 0, right: 0),

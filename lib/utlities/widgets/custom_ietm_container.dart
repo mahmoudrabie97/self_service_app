@@ -3,9 +3,11 @@ import 'package:self_service_app/utlities/app_styles.dart';
 
 class CustomIetmContainer extends StatelessWidget {
   const CustomIetmContainer(
-      {super.key, required this.icon, required this.text});
+      {super.key, required this.icon, required this.text, this.onPressed});
   final IconData icon;
   final String text;
+     final  void Function () ? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,7 +51,7 @@ class CustomIetmContainer extends StatelessWidget {
             ),
             const Spacer(),
             IconButton(
-              onPressed: () {},
+              onPressed: onPressed,
               icon: const Icon(Icons.arrow_forward_ios),
             ),
           ],

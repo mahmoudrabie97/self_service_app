@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:self_service_app/utlities/app_assets.dart';
 
 class CustomHomeApbar extends StatelessWidget {
-  const CustomHomeApbar({
+   CustomHomeApbar({
     super.key,
+    required this.title,
+    required this.subTitle,
+    this.icon = Icons.notifications_active,
   });
+
+  final String title;
+  final String subTitle;
+   IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +29,15 @@ class CustomHomeApbar extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Mohammmed Ahmed',
-                  style: TextStyle(color: Colors.white),
+                  title,
+                  style: const TextStyle(color: Colors.white),
                 ),
-                Text('Accountant',
-                    style: TextStyle(
+                Text(subTitle,
+                    style: const TextStyle(
                       color: Colors.grey,
                     )),
               ],
@@ -40,8 +47,8 @@ class CustomHomeApbar extends StatelessWidget {
         const Spacer(),
         IconButton(
             onPressed: () {},
-            icon: const Icon(
-              Icons.notifications_active,
+            icon: Icon(
+              icon,
               color: Colors.white,
             )),
       ],
