@@ -1,17 +1,15 @@
-import 'dart:ui';
+
 
 import 'package:date_picker_timeline/date_picker_widget.dart';
 
 import 'package:flutter/material.dart';
-import 'package:self_service_app/pages/profile_page/widgets/customtimercontainer.dart';
+
 import 'package:self_service_app/utlities/app_styles.dart';
 
-import '../../../utlities/custommethods.dart';
+
 
 import '../../../utlities/widgets/custombutton.dart';
-import '../../../utlities/widgets/customtextformfield.dart';
 
-import 'custom_field_row.dart';
 import 'custom_time_container.dart';
 
 class CustomAttendenceMainContainer extends StatefulWidget {
@@ -71,16 +69,17 @@ class _CustomAttendenceMainContainerState
                 onPressed: () {
 
                 },
-                buttonColor: Color(0xff705A3E),
+                buttonColor: const Color(0xff705A3E),
                 borderRadius: (10),
               ),
               const SizedBox(height: 15,),
               CustomButton(
                 buttonText: 'Time Out ',
-                onPressed: () {
+                onPressed: ()
+                {
 
                 },
-                buttonColor: Color(0xff705A3E),
+                buttonColor: const Color(0xff705A3E),
                 borderRadius: (10),
               ),
             ],
