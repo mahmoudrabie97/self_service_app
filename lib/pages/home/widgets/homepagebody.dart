@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:self_service_app/pages/home/widgets/custom_annualleve.dart';
 import 'package:self_service_app/pages/home/widgets/custom_request_button.dart';
 import 'package:self_service_app/pages/home/widgets/custominformation_container.dart';
-import 'package:self_service_app/pages/home/widgets/custompersonalinforow.dart';
+import 'package:self_service_app/utlities/widgets/custom_personal_apbar.dart';
 
 class HomePageBody extends StatelessWidget {
   const HomePageBody({super.key});
@@ -13,7 +13,11 @@ class HomePageBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          const CustomHomeApbar(),
+           CustomHomeApbar(
+            title: 'Mohamed Ahmed',
+            subTitle: 'Accountant',
+            icon: Icons.notifications_active,
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 20, left: 0, right: 0),

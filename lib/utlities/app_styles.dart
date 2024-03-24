@@ -27,6 +27,11 @@ class AppStyles {
     color: Colors.black,
     fontWeight: FontWeight.w500,
   );
+  static const style13 = TextStyle(
+    fontSize: 13,
+    color: Colors.black54,
+    fontWeight: FontWeight.w500,
+  );
   static const datePackerStyle = TextStyle(
     color: Color(0xff705A3E),
     fontSize: 14,
