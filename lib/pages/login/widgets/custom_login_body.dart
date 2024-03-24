@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:self_service_app/cubit/authcubit/authcubit.dart';
 import 'package:self_service_app/cubit/authcubit/authstates.dart';
+import 'package:self_service_app/root_bottom_nav.dart';
+import 'package:self_service_app/utlities/extentionhelper.dart';
 
 import '../../../utlities/app_assets.dart';
 import '../../../utlities/app_styles.dart';
@@ -32,7 +34,9 @@ class CustomLogInBody extends StatelessWidget {
             ),
             BlocConsumer<AuthCubit, AuthStates>(
               listener: (context, state) {
-                // TODO: implement listener
+                if (state is LoginSucsessState) {
+                  context.push(const RootBottmNav());
+                }
               },
               builder: (context, state) {
                 return CustomLoginMainContainer(

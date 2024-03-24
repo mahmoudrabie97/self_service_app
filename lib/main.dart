@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:self_service_app/cubit/authcubit/authcubit.dart';
+import 'package:self_service_app/cubit/request_cubit/request_cubit.dart';
 import 'package:self_service_app/pages/onboarding_page/onbarding_one.dart';
 import 'package:self_service_app/pages/onboarding_page/onboarding_page.dart';
 import 'package:self_service_app/pages/types_of_request/types_of_requests_page.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (BuildContext context) => AuthCubit()),
+        BlocProvider(create: (BuildContext context) => RequestCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

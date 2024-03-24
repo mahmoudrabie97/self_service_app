@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:self_service_app/cubit/request_cubit/request_cubit.dart';
 import 'package:self_service_app/pages/home/widgets/custom_annualleve.dart';
 import 'package:self_service_app/pages/home/widgets/custom_request_button.dart';
 import 'package:self_service_app/pages/home/widgets/custominformation_container.dart';
 import 'package:self_service_app/pages/home/widgets/custompersonalinforow.dart';
 
-class HomePageBody extends StatelessWidget {
+class HomePageBody extends StatefulWidget {
   const HomePageBody({super.key});
+
+  @override
+  State<HomePageBody> createState() => _HomePageBodyState();
+}
+
+class _HomePageBodyState extends State<HomePageBody> {
+  @override
+  void initState() {
+    RequestCubit.get(context).getlistTimeOffRequest(context: context);
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +59,10 @@ class HomePageBody extends StatelessWidget {
                               top: 25, bottom: 25, left: 12, right: 12),
                           child: CustomAnnualLevel(),
                         ),
-                        CustomRequestButtton()
+                        CustomRequestButtton(),
+                        SizedBox(
+                          height: 50,
+                        ),
                       ],
                     ),
                   ],

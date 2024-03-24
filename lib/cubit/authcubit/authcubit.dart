@@ -54,7 +54,6 @@ class AuthCubit extends Cubit<AuthStates> {
   }) {
     Map<String, String> headers = {
       'Content-Type': 'application/json',
-      //'Authorization': 'Bearer ${AppConstant.token}'
     };
     emit(LoginLoadingState());
     CallApi.postData(
@@ -86,15 +85,13 @@ class AuthCubit extends Cubit<AuthStates> {
 
               print('Setion Id ${AppConstant.settion_Id}');
 
-              context.push(const RootBottmNav());
               emit(LoginSucsessState());
             }
           }
         }
-
-        ;
-
-        emit(LoginSucsessState());
+      } else {
+        ShowMyDialog.showMsg(
+            context, 'something error, please try later${value.statusCode}  ');
       }
     }).catchError((error) {
       debugPrint('An error occurred: $error');

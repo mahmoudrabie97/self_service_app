@@ -1,5 +1,3 @@
-
-
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
@@ -19,14 +17,7 @@ class RequestCubit extends Cubit<RequestStates> {
   RequestCubit() : super(RequestInitialState());
   static RequestCubit get(context) => BlocProvider.of(context);
 
-
-
-
-
-
-
-  void listTimeOffRequest({
-
+  void getlistTimeOffRequest({
     required BuildContext context,
   }) {
     Map<String, String> headers = {
@@ -37,7 +28,9 @@ class RequestCubit extends Cubit<RequestStates> {
     CallApi.postData(
       data: {
         "jsonrpc": "2.0",
-        "params": {"session":  AppConstant.settion_Id, }
+        "params": {
+          "session": AppConstant.settion_Id,
+        }
       },
       baseUrl: ApiEndPoint.baseurl,
       apiUrl: ApiEndPoint.listTimeRequestUrl,
@@ -48,30 +41,22 @@ class RequestCubit extends Cubit<RequestStates> {
         final responseBody = json.decode(value.body);
 
         print(responseBody);
-       if(responseBody['result']['status']==200)
-         {
-           print('suecccccccccc$responseBody');
-           emit(TimeOffRequestSucsessState());
-        }
-        else if(responseBody['result']['status']==404)
-        {
+        if (responseBody['result']['status'] == 200) {
+          print('suecccccccccc$responseBody');
+          emit(TimeOffRequestSucsessState());
+        } else if (responseBody['result']['status'] == 404) {
           String errormessage = responseBody['result']['message'];
           ShowMyDialog.widgetshowMsg(context, Text(errormessage));
           emit(TimeOffRequestErrorState());
-        }
-       else if (responseBody.containsKey('error')) {
+        } else if (responseBody.containsKey('error')) {
           String errormessage = responseBody['error']['data']['message'];
           ShowMyDialog.widgetshowMsg(context, Text(errormessage));
           emit(TimeOffRequestErrorState());
+        } else {
+          ShowMyDialog.widgetshowMsg(
+              context, Text('someThing error try again '));
+          emit(TimeOffRequestErrorState());
         }
-       else {
-         ShowMyDialog.widgetshowMsg(context, Text('someThing error try again '));
-         emit(TimeOffRequestErrorState());
-       }
-
-
-
-
       }
     }).catchError((error) {
       debugPrint('An error occurred: $error');
