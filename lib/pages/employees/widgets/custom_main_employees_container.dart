@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../utlities/app_styles.dart';
+import '../../request_page/widgets/custom_drop_down_button.dart';
 import '../../../utlities/widgets/customtextformfield.dart';
 import '../employees.dart';
 import 'custom_list_view_employees.dart';
+import 'empolyees_custom_drop_down_button.dart';
 
 class CustomMainEmployeesContainer extends StatelessWidget {
   const CustomMainEmployeesContainer({super.key});
@@ -20,20 +22,7 @@ class CustomMainEmployeesContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomTextFormField(
-              suffixicon: Icons.arrow_drop_down,
-              hintText: 'Sigma Code Company ',
-              hinnntcolr: Colors.grey,
-              keyboardType: TextInputType.text,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'please enter your email';
-                } // else if (!isEmailValid(value)) {
-                // return 'Invalid email format';
-                // }
-                return null;
-              },
-            ),
+            EmployeesCustomDropDownButton(dropDownValue: 'Sigma Code Company ',),
             SizedBox(height: 16,),
             Text(
               'Employees ',
