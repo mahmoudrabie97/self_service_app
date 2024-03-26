@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:self_service_app/cubit/authcubit/authcubit.dart';
 import 'package:self_service_app/cubit/authcubit/authstates.dart';
-import 'package:self_service_app/root_bottom_nav.dart';
 import 'package:self_service_app/utlities/app_styles.dart';
-import 'package:self_service_app/utlities/extentionhelper.dart';
 
-import '../../../utlities/custommethods.dart';
 import '../../../utlities/widgets/custombutton.dart';
 import '../../../utlities/widgets/customtextformfield.dart';
 import 'custom_login_row.dart';
@@ -16,6 +13,8 @@ class CustomLoginMainContainer extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final String db;
+  final FocusNode field1 = FocusNode();
+  final FocusNode field2 = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +50,10 @@ class CustomLoginMainContainer extends StatelessWidget {
                 hinnntcolr: Colors.grey,
                 keyboardType: TextInputType.text,
                 controller: _emailController,
+                focusnode: field1,
+                onsubmitted: (value) {
+                  FocusScope.of(context).requestFocus(field2);
+                },
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'please enter your email';
@@ -67,7 +70,12 @@ class CustomLoginMainContainer extends StatelessWidget {
                 controller: _passwordController,
                 hintText: 'Password',
                 hinnntcolr: Colors.grey,
+                suffixicon: AuthCubit.get(context).sufficxicp,
+                suffixpressed: () {
+                  AuthCubit.get(context).changeSecurePassword();
+                },
                 keyboardType: TextInputType.text,
+                focusnode: field2,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'please enter your email';

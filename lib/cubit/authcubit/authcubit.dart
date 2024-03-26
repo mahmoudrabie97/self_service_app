@@ -17,7 +17,6 @@ class AuthCubit extends Cubit<AuthStates> {
   AuthCubit() : super(AuthInitialState());
   static AuthCubit get(context) => BlocProvider.of(context);
   IconData sufficxicp = Icons.visibility_off;
-  IconData sufficxicpc = Icons.visibility_off;
   bool isSecurep = true;
   bool isSecurepc = true;
   bool showAnimation = false;
@@ -33,17 +32,6 @@ class AuthCubit extends Cubit<AuthStates> {
       isSecurep = true;
     }
     emit(ChangesecurepasswordState());
-  }
-
-  void changeSecurePasswordconfig() {
-    if (isSecurepc) {
-      sufficxicpc = Icons.visibility_off;
-      isSecurepc = false;
-    } else {
-      sufficxicpc = Icons.remove_red_eye_outlined;
-      isSecurepc = true;
-    }
-    emit(ChangesecurepasswordconfigState());
   }
 
   void loginUser({
