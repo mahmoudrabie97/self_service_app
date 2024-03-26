@@ -17,8 +17,8 @@ class CustomRequestsRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CustomDropDownButton(dropDownValue: 'Status',),
-          CustomDropDownButton(dropDownValue: 'Type',),
-          CustomDropDownButton(dropDownValue: 'Sort',),
+          CustomDropDownButton(dropDownValue: 'Type', ),
+          CustomDropDownButton(dropDownValue: 'Sort', ),
         ],
       ),
     );

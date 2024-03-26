@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class CustomDropDownButton extends StatefulWidget {
-  CustomDropDownButton({super.key, required this.dropDownValue});
+class EmployeesCustomDropDownButton extends StatefulWidget {
+  EmployeesCustomDropDownButton({super.key, required this.dropDownValue});
   String dropDownValue;
 
   @override
-  State<CustomDropDownButton> createState() => _CustomDropDownButtonState();
+  State<EmployeesCustomDropDownButton> createState() => _CustomDropDownButtonState();
 }
 
-class _CustomDropDownButtonState extends State<CustomDropDownButton> {
+class _CustomDropDownButtonState extends State<EmployeesCustomDropDownButton> {
 
   @override
 
   Widget build(BuildContext context) {
     return Container(
       height: 40,
-      width: 90,
+      width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
       ),
       child: DropdownButton<String>(
+        isExpanded: true,
         value: widget.dropDownValue,
-        icon: const Icon(
+
+        icon: Icon(
           Icons.keyboard_arrow_down,
           //size: 25,
           color: Colors.brown,
@@ -34,24 +37,24 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
         },
         items: const [
           DropdownMenuItem(
-            value: 'Status',
+            value: 'Sigma Code Company ',
             child: Text(
-              'Status',
+              'Sigma Code Company ',
               style: TextStyle(
                 color: Colors.brown,
               ),
             ),
           ),
           DropdownMenuItem(
-            value: 'Type',
-            child: Text('Type',
+            value: 'Programming Company ',
+            child: Text('Programming Company ',
               style: TextStyle(
                 color: Colors.brown,
               ),),
           ),
           DropdownMenuItem(
-            value: 'Sort',
-            child: Text('Sort',
+            value: 'Test Company',
+            child: Text('Test Company',
               style: TextStyle(
                 color: Colors.brown,
               ),),
