@@ -42,7 +42,7 @@ class _CustomRequestsMainContainerState
               topRight: Radius.circular(40),
             ),
           ),
-          child: state is RequestLoadingState
+          child: state is TimeRequestLoadingState
               ? Center(
                   child: CircularProgressIndicator(
                     color: Colors.brown,

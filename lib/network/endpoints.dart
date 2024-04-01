@@ -3,5 +3,6 @@ class ApiEndPoint {
   static const String loginUrl = 'web/session/authenticate';
 
   static const String listTimeRequestUrl = 'list_time_off_requests';
+  static const String dataSearchUrl = 'data_search';
 }
 //list_time_off_requests
