@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:self_service_app/utlities/app_assets.dart';
 
-class CustomHomeApbar extends StatelessWidget {
-   CustomHomeApbar({
+class CustomPersonalApbar extends StatelessWidget {
+   CustomPersonalApbar({
     super.key,
     required this.title,
     required this.subTitle,
