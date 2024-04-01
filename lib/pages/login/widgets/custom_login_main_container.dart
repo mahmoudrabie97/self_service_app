@@ -70,8 +70,8 @@ class CustomLoginMainContainer extends StatelessWidget {
                 controller: _passwordController,
                 hintText: 'Password',
                 hinnntcolr: Colors.grey,
-                suffixicon: AuthCubit.get(context).sufficxicp,
-                suffixpressed: () {
+                // suffixicon: AuthCubit.get(context).sufficxicp,
+                suffixpressed: () { 
                   AuthCubit.get(context).changeSecurePassword();
                 },
                 keyboardType: TextInputType.text,

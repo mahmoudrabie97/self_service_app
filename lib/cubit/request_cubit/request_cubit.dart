@@ -22,9 +22,11 @@ class RequestCubit extends Cubit<RequestStates> {
   }) {
     Map<String, String> headers = {
       'Content-Type': 'application/json',
+      'Cookie': 'session_id=${AppConstant.settion_Id}'
       //'Authorization': 'Bearer ${AppConstant.token}'
     };
     emit(RequestLoadingState());
+    print('Setion Id ${AppConstant.settion_Id}');
     CallApi.postData(
       data: {
         "jsonrpc": "2.0",
@@ -37,6 +39,7 @@ class RequestCubit extends Cubit<RequestStates> {
       headers: headers,
       context: context,
     ).then((value) async {
+      print("this ${value!.body}");
       if (value!.statusCode == 200) {
         final responseBody = json.decode(value.body);
 
