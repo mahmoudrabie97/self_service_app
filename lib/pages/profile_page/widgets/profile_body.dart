@@ -14,7 +14,7 @@ class ProfileBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-            CustomPersonalApbar(title: 'Mohammmed Ahmed', subTitle: 'Accountant', icon: Icons.notifications_active,
+            CustomHomeApbar(title: 'Mohammmed Ahmed', subTitle: 'Accountant', icon: Icons.notifications_active,
                ),
           Expanded(
             child: Padding(
