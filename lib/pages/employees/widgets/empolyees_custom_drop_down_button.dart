@@ -25,15 +25,21 @@ class _CustomDropDownButtonState extends State<EmployeesCustomDropDownButton> {
         isExpanded: true,
         value: widget.dropDownValue,
 
-        icon: Icon(
+        icon: const Icon(
           Icons.keyboard_arrow_down,
           //size: 25,
+
           color: Colors.brown,
         ),
         onChanged: (String? newValue) {
-          setState(() {
+          setState(()
+          {
+
             widget.dropDownValue = newValue!;
-          });
+
+          }
+          );
+
         },
         items: const [
           DropdownMenuItem(
