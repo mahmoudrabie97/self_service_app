@@ -40,14 +40,6 @@ class CustomTypesRequestMainContainer extends StatelessWidget {
               height: 17,
             ),
             CustomIetmContainer(
-              icon: Icons.email,
-              text: 'Letter Requests',
-            ),
-
-            SizedBox(
-              height: 17,
-            ),
-            CustomIetmContainer(
               icon: Icons.settings,
               text: 'Maintenance request',
             ),
@@ -55,15 +47,8 @@ class CustomTypesRequestMainContainer extends StatelessWidget {
               height: 17,
             ),
             CustomIetmContainer(
-              icon: Icons.clean_hands_sharp,
-              text: 'Loan Requests',
-            ),
-            SizedBox(
-              height: 17,
-            ),
-            CustomIetmContainer(
-              icon: Icons.featured_play_list_sharp,
-              text: 'Purchase Requests',
+              icon: Icons.email,
+              text: 'Letter Requests',
             ),
           ],
         ),

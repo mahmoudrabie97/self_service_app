@@ -26,7 +26,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     return SafeArea(
       child: Column(
         children: [
-           CustomPersonalApbar(
+           CustomHomeApbar(
             title: 'Mohamed Ahmed',
             subTitle: 'Accountant',
             icon: Icons.notifications_active,
