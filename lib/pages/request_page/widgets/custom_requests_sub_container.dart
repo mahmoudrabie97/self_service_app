@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:self_service_app/models/request_time_model.dart';
 import 'package:self_service_app/utlities/app_styles.dart';
 
 import 'custom_linear_conntainer.dart';
@@ -6,7 +7,8 @@ import 'custom_requests_small_container.dart';
 import 'custom_row_container.dart';
 
 class CustomRequestsSubContainer extends StatelessWidget {
-  const CustomRequestsSubContainer({Key? key}) : super(key: key);
+  final TimeRequestModel? timeRequestModel;
+  const CustomRequestsSubContainer({super.key, required this.timeRequestModel});
 
   @override
   Widget build(BuildContext context) {
@@ -54,16 +56,22 @@ class CustomRequestsSubContainer extends StatelessWidget {
                 'Mon, 5 Jan 2024 3:40 PM',
                 style: AppStyles.style16,
               ),
-              SizedBox(height: 5,),
+              SizedBox(
+                height: 5,
+              ),
               CustomLinearContainer(),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 children: [
                   Icon(
                     Icons.text_snippet_sharp,
                     color: Colors.grey,
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Text(
                     'Request Type',
                     style: AppStyles.style16,
@@ -73,7 +81,9 @@ class CustomRequestsSubContainer extends StatelessWidget {
                     width: 100,
                     text: 'Correction',
                   ),
-                  SizedBox(width: 5,),
+                  SizedBox(
+                    width: 5,
+                  ),
                   CustomRequestsSmallContainer(
                     width: 55,
                     text: 'IN',
@@ -90,9 +100,13 @@ class CustomRequestsSubContainer extends StatelessWidget {
                 title: 'Request ID',
                 subTitle: '12344',
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               CustomLinearContainer(),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 children: [
                   CircleAvatar(
@@ -104,7 +118,9 @@ class CustomRequestsSubContainer extends StatelessWidget {
                       size: 15,
                     ),
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Text(
                     'Request approved by all managers ',
                     style: AppStyles.style16,
@@ -118,5 +134,3 @@ class CustomRequestsSubContainer extends StatelessWidget {
     );
   }
 }
-
-

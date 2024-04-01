@@ -9,9 +9,7 @@ class CustomDropDownButton extends StatefulWidget {
 }
 
 class _CustomDropDownButtonState extends State<CustomDropDownButton> {
-
   @override
-
   Widget build(BuildContext context) {
     return Container(
       height: 40,
@@ -44,17 +42,21 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           ),
           DropdownMenuItem(
             value: 'Type',
-            child: Text('Type',
+            child: Text(
+              'Type',
               style: TextStyle(
                 color: Colors.brown,
-              ),),
+              ),
+            ),
           ),
           DropdownMenuItem(
             value: 'Sort',
-            child: Text('Sort',
+            child: Text(
+              'Sort',
               style: TextStyle(
                 color: Colors.brown,
-              ),),
+              ),
+            ),
           ),
         ],
       ),

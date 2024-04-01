@@ -15,7 +15,7 @@ class HomePageBody extends StatefulWidget {
 class _HomePageBodyState extends State<HomePageBody> {
   @override
   void initState() {
-    RequestCubit.get(context).getlistTimeOffRequest(context: context);
+    // RequestCubit.get(context).getlistTimeOffRequest(context: context);
     // TODO: implement initState
     super.initState();
   }
@@ -26,7 +26,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     return SafeArea(
       child: Column(
         children: [
-           CustomHomeApbar(
+          CustomHomeApbar(
             title: 'Mohamed Ahmed',
             subTitle: 'Accountant',
             icon: Icons.notifications_active,

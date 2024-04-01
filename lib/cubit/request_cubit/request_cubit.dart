@@ -1,21 +1,19 @@
 import 'dart:convert';
 
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:self_service_app/cubit/request_cubit/requests_states.dart';
-import 'package:self_service_app/utlities/extentionhelper.dart';
+import 'package:self_service_app/models/request_time_model.dart';
 
-import '../../models/user_model.dart';
 import '../../network/api.dart';
 import '../../network/endpoints.dart';
-import '../../root_bottom_nav.dart';
 import '../../utlities/constants.dart';
 import '../../utlities/widgets/showdialog.dart';
 
 class RequestCubit extends Cubit<RequestStates> {
   RequestCubit() : super(RequestInitialState());
   static RequestCubit get(context) => BlocProvider.of(context);
+  TimeRequestModel? timerequestModel;
 
   void getlistTimeOffRequest({
     required BuildContext context,
@@ -23,7 +21,6 @@ class RequestCubit extends Cubit<RequestStates> {
     Map<String, String> headers = {
       'Content-Type': 'application/json',
       'Cookie': 'session_id=${AppConstant.settion_Id}'
-      //'Authorization': 'Bearer ${AppConstant.token}'
     };
     emit(RequestLoadingState());
     print('Setion Id ${AppConstant.settion_Id}');
@@ -40,8 +37,12 @@ class RequestCubit extends Cubit<RequestStates> {
       context: context,
     ).then((value) async {
       print("this ${value!.body}");
-      if (value!.statusCode == 200) {
+      if (value.statusCode == 200) {
         final responseBody = json.decode(value.body);
+        timerequestModel = TimeRequestModel.fromJson(responseBody);
+        print(' timeeeeeeeeeeeeeeee ${timerequestModel!.result!.status}');
+
+        // userModel = UserModel.fromJson(responseBody);
 
         print(responseBody);
         if (responseBody['result']['status'] == 200) {
