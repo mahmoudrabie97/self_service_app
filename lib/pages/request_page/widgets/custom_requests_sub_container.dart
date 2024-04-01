@@ -8,14 +8,16 @@ import 'custom_row_container.dart';
 
 class CustomRequestsSubContainer extends StatelessWidget {
   final TimeRequestModel? timeRequestModel;
-  const CustomRequestsSubContainer({super.key, required this.timeRequestModel});
+  final int index;
+  const CustomRequestsSubContainer(
+      {super.key, required this.timeRequestModel, required this.index});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20.0, right: 15, left: 15),
       child: Container(
-        height: MediaQuery.sizeOf(context).height * .35,
+        height: MediaQuery.sizeOf(context).height * .17,
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
@@ -23,14 +25,14 @@ class CustomRequestsSubContainer extends StatelessWidget {
             end: Alignment.centerRight,
             colors: [
               Colors.brown,
-              Colors.white,
+              Colors.white70,
             ],
             stops: [.011, .011],
           ),
           color: Colors.orangeAccent,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: const Padding(
+        child: Padding(
           padding: EdgeInsets.only(left: 20.0, top: 25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,79 +55,19 @@ class CustomRequestsSubContainer extends StatelessWidget {
                 ],
               ),
               Text(
-                'Mon, 5 Jan 2024 3:40 PM',
+                timeRequestModel!.result!.response![index].requestDateFrom ??
+                    '',
                 style: AppStyles.style16,
               ),
               SizedBox(
                 height: 5,
               ),
-              CustomLinearContainer(),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.text_snippet_sharp,
-                    color: Colors.grey,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Request Type',
-                    style: AppStyles.style16,
-                  ),
-                  Spacer(),
-                  CustomRequestsSmallContainer(
-                    width: 100,
-                    text: 'Correction',
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  CustomRequestsSmallContainer(
-                    width: 55,
-                    text: 'IN',
-                  ),
-                ],
-              ),
-              CustomRowContainer(
-                icon: Icons.person_sharp,
-                title: 'Attendance Day',
-                subTitle: 'Mon, 5 Jan ',
-              ),
-              CustomRowContainer(
-                icon: Icons.watch_later_rounded,
-                title: 'Request ID',
-                subTitle: '12344',
+              Text(
+                'Time of request',
+                style: AppStyles.style16,
               ),
               SizedBox(
-                height: 10,
-              ),
-              CustomLinearContainer(),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  CircleAvatar(
-                    radius: 10,
-                    backgroundColor: Colors.lightGreen,
-                    child: Icon(
-                      Icons.check,
-                      color: Colors.white,
-                      size: 15,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Request approved by all managers ',
-                    style: AppStyles.style16,
-                  ),
-                ],
+                height: 5,
               ),
             ],
           ),

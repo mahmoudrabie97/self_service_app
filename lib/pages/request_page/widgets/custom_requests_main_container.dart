@@ -42,29 +42,38 @@ class _CustomRequestsMainContainerState
               topRight: Radius.circular(40),
             ),
           ),
-          child: Column(
-            children: [
-              CustomRequestsRow(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height - 200,
-                child: ListView.separated(
-                    itemBuilder: (context, index) {
-                      return CustomRequestsSubContainer(
-                        timeRequestModel:
-                            RequestCubit.get(context).timerequestModel,
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return Divider();
-                    },
-                    itemCount: RequestCubit.get(context)
-                        .timerequestModel!
-                        .result!
-                        .response!
-                        .length),
-              ),
-            ],
-          ),
+          child: state is RequestLoadingState
+              ? Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.brown,
+                  ),
+                )
+              : Column(
+                  children: [
+                    CustomRequestsRow(),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height - 200,
+                      child: ListView.separated(
+                          itemBuilder: (context, index) {
+                            return CustomRequestsSubContainer(
+                              timeRequestModel:
+                                  RequestCubit.get(context).timerequestModel,
+                              index: index,
+                            );
+                          },
+                          separatorBuilder: (context, index) {
+                            return Divider(
+                              thickness: 3,
+                            );
+                          },
+                          itemCount: RequestCubit.get(context)
+                              .timerequestModel!
+                              .result!
+                              .response!
+                              .length),
+                    ),
+                  ],
+                ),
         );
       },
     );
