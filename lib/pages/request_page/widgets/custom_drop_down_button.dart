@@ -13,7 +13,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
   Widget build(BuildContext context) {
     return Container(
       height: 40,
-      width: 90,
+      width: 70,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
