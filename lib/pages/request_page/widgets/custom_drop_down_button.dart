@@ -37,6 +37,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
               'Status',
               style: TextStyle(
                 color: Colors.brown,
+                fontSize: 15,
               ),
             ),
           ),
