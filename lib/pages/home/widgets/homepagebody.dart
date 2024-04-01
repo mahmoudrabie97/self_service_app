@@ -3,6 +3,7 @@ import 'package:self_service_app/cubit/request_cubit/request_cubit.dart';
 import 'package:self_service_app/pages/home/widgets/custom_annualleve.dart';
 import 'package:self_service_app/pages/home/widgets/custom_request_button.dart';
 import 'package:self_service_app/pages/home/widgets/custominformation_container.dart';
+import 'package:self_service_app/utlities/widgets/custom_appbar.dart';
 import 'package:self_service_app/utlities/widgets/custom_personal_apbar.dart';
 
 class HomePageBody extends StatefulWidget {
@@ -26,10 +27,13 @@ class _HomePageBodyState extends State<HomePageBody> {
     return SafeArea(
       child: Column(
         children: [
-          CustomPersonalApbar(
-            title: 'Mohamed Ahmed',
-            subTitle: 'Accountant',
+          CustomAppbarMain(
+            text: 'Mohamed Ahmed',
             icon: Icons.notifications_active,
+
+            //title: 'Mohamed Ahmed',
+            //subTitle: 'Accountant',
+            //icon: Icons.notifications_active,
           ),
           Expanded(
             child: Padding(
