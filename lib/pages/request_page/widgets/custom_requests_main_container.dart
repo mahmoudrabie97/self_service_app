@@ -10,7 +10,7 @@ import 'custom_requests_row.dart';
 import 'custom_requests_sub_container.dart';
 
 class CustomRequestsMainContainer extends StatefulWidget {
-  CustomRequestsMainContainer({super.key});
+  const CustomRequestsMainContainer({super.key});
 
   @override
   State<CustomRequestsMainContainer> createState() =>
