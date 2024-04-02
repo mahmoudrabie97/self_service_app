@@ -41,15 +41,30 @@ class CustomTypesRequestMainContainer extends StatelessWidget {
             ),
             CustomIetmContainer(
               icon: Icons.settings,
-              text: 'Maintenance request',
+              text: 'Letter Requests',
             ),
             SizedBox(
               height: 17,
             ),
             CustomIetmContainer(
               icon: Icons.email,
-              text: 'Letter Requests',
+              text: 'Maintenance request',
             ),
+            SizedBox(
+              height: 17,
+            ),
+            CustomIetmContainer(
+              icon: Icons.clean_hands_rounded,
+              text: 'Loan Requests',
+            ),
+            SizedBox(
+              height: 17,
+            ),
+            CustomIetmContainer(
+              icon: Icons.list_alt_rounded,
+              text: 'Purchase Requests',
+            ),
+
           ],
         ),
       ),
