@@ -16,6 +16,8 @@ class HomePageBody extends StatefulWidget {
 class _HomePageBodyState extends State<HomePageBody> {
   @override
   void initState() {
+    RequestCubit.get(context).getlistMaintenanceRequest(context: context);
+    RequestCubit.get(context).getlistExpensesRequest(context: context);
     RequestCubit.get(context).dataSearch(context: context, searchletter: 's');
     // TODO: implement initState
     super.initState();

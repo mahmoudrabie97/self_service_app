@@ -13,3 +13,19 @@ class DataSearchLoadingState extends RequestStates {}
 class DataSearchSucsessState extends RequestStates {}
 
 class DataSearchErrorState extends RequestStates {}
+
+
+
+class RequestListExpensesLoadingState extends RequestStates {}
+
+class RequestListExpensesSucsessState extends RequestStates {}
+
+class RequestListExpensesErrorState extends RequestStates {}
+
+class RequestListMaintenanceLoadingState extends RequestStates {}
+
+class RequestListMaintenanceSucsessState extends RequestStates {}
+
+class RequestListMaintenanceErrorState extends RequestStates {}
+
+
