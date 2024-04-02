@@ -4,5 +4,7 @@ class ApiEndPoint {
 
   static const String listTimeRequestUrl = 'list_time_off_requests';
   static const String dataSearchUrl = 'data_search';
+  static const String listExpensesRequestUrl = 'list_expenses_requests';
+  static const String listMaintenanceRequestUrl = 'list_maintenance_requests';
 }
 //list_time_off_requests
